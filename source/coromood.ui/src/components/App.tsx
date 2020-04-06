@@ -3,6 +3,7 @@ import logo from "../images/logo.svg";
 import "../styles/App.css";
 import { Header } from "./header/Header";
 import styled from "styled-components";
+import { Main } from "./main/mainView";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -18,6 +19,7 @@ export const App = () => {
     <ContentWrapper>
       <Content>
         <Header />
+        <Main />
       </Content>
     </ContentWrapper>
   );

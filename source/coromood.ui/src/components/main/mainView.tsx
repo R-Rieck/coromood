@@ -53,7 +53,8 @@ const QuestionWrapper = styled.div`
   justify-content: space-evenly;
 
   > img {
-    height: 500px;
+    height: 400px;
+    width: 500px;
   }
 
   @media only screen and (max-width: 375px) {

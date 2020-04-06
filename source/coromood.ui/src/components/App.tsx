@@ -11,7 +11,7 @@ const ContentWrapper = styled.div`
 `;
 
 const Content = styled.div`
-  width: 70%;
+  width: 65%;
 `;
 
 export const App = () => {

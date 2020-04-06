@@ -8,6 +8,7 @@ import { Share } from "../shared/Share";
 
 const MainWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -24,7 +25,7 @@ const MainWrapper = styled.div`
 
   .meta {
     font-size: 0.8rem;
-    margin-top: 10px;
+    margin-top: 50px;
     color: #cacaca;
   }
 `;
@@ -45,7 +46,9 @@ const Caption = styled.h3`
 const QuestionWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 20px;
+  flex-direction: row-reverse;
   justify-content: space-evenly;
 
   > img {
@@ -59,6 +62,7 @@ export const Main = () => {
       <Caption>Stimmungstagebuch für Kriesenzeiten</Caption>
       <Title>Ein Leben in Quarantäne</Title>
       <QuestionWrapper>
+        <img src={quarantine}></img>
         <Card>
           <Card.Content>
             <Card.Header>
@@ -74,7 +78,6 @@ export const Main = () => {
             </Card.Meta>
           </Card.Content>
         </Card>
-        <img src={quarantine}></img>
       </QuestionWrapper>
     </MainWrapper>
   );

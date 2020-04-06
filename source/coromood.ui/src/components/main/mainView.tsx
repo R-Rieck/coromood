@@ -15,6 +15,7 @@ const MainWrapper = styled.div`
   font-size: 1.2rem;
   width: 100%;
   height: 100%;
+  min-width: 375px;
 
   .card {
     margin: 100px;
@@ -53,6 +54,13 @@ const QuestionWrapper = styled.div`
 
   > img {
     height: 500px;
+  }
+
+  @media only screen and (max-width: 375px) {
+    justify-content: center;
+    > img {
+      height: 300px;
+    }
   }
 `;
 

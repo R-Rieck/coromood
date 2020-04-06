@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../images/logo.svg";
 import "../styles/App.css";
 import { Header } from "./header/Header";
 import styled from "styled-components";
@@ -12,6 +11,11 @@ const ContentWrapper = styled.div`
 
 const Content = styled.div`
   width: 65%;
+
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+    padding-left: 5px;
+  }
 `;
 
 export const App = () => {

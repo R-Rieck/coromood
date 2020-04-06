@@ -7,6 +7,7 @@ import Usa from "../../images/usa.svg";
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   height: 100px;
   color: #cacaca;
@@ -22,17 +23,19 @@ const HeaderWrapper = styled.div`
 `;
 
 const InfoActionWrapper = styled.div`
-  width: 330px;
+  width: 350px;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
 
   > button {
     background-color: transparent;
     border: 1px solid #b8b8b8;
     border-radius: 25px;
-    height: 40px;
+    height: 30px;
+    padding: 5px 20px;
     color: #b3b3ff;
     cursor: pointer;
 

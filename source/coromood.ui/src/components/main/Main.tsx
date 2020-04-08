@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Startup } from "./Startup";
+import { Index } from "./UserInput/index";
 
 const MainWrapper = styled.div`
   font-size: 1.2rem;
@@ -14,6 +15,7 @@ export const Main = () => {
   return (
     <MainWrapper>
       <Startup />
+      <Index />
     </MainWrapper>
   );
 };

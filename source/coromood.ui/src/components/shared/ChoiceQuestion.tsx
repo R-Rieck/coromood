@@ -32,7 +32,7 @@ type ButtonType = {
   color: string;
 };
 
-export const Question = () => {
+export const ChoiceQuestion = () => {
   const [yesBtn, setYesBtn] = useState<ButtonType>({
     background: "transparent",
     borderBackground: "#B8B8B8",

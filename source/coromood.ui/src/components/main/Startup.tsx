@@ -1,21 +1,16 @@
-//rename it
 import React from "react";
 import styled from "styled-components";
 import quarantine from "../../images/quarantine.png";
 import { Card, Icon } from "semantic-ui-react";
-import { Question } from "../shared/Question";
+import { ChoiceQuestion } from "../shared/ChoiceQuestion";
 import { Share } from "../shared/Share";
 
-const MainWrapper = styled.div`
+const StartupWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
-  font-size: 1.2rem;
-  width: 100%;
-  height: 100%;
-  min-width: 375px;
 
   .card {
     margin: 100px;
@@ -53,8 +48,8 @@ const QuestionWrapper = styled.div`
   justify-content: space-evenly;
 
   > img {
-    height: 400px;
-    width: 500px;
+    height: 500px;
+    width: 600px;
   }
 
   @media only screen and (max-width: 375px) {
@@ -65,9 +60,9 @@ const QuestionWrapper = styled.div`
   }
 `;
 
-export const Main = () => {
+export const Startup = () => {
   return (
-    <MainWrapper>
+    <StartupWrapper>
       <Caption>Stimmungstagebuch für Kriesenzeiten</Caption>
       <Title>Ein Leben in Quarantäne</Title>
       <QuestionWrapper>
@@ -80,7 +75,7 @@ export const Main = () => {
               der letzten Woche.
             </Card.Header>
             <Card.Description>
-              <Question />
+              <ChoiceQuestion />
             </Card.Description>
             <Card.Meta>
               <Share />
@@ -88,6 +83,6 @@ export const Main = () => {
           </Card.Content>
         </Card>
       </QuestionWrapper>
-    </MainWrapper>
+    </StartupWrapper>
   );
 };

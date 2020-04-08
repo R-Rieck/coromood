@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/App.css";
 import { Header } from "./header/Header";
 import styled from "styled-components";
-import { Main } from "./main/mainView";
+import { Main } from "./main/Main";
 
 const ContentWrapper = styled.div`
   display: flex;

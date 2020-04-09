@@ -49,7 +49,7 @@ const QuestionWrapper = styled.div`
 
   > img {
     height: 500px;
-    width: 600px;
+    width: 650px;
   }
 
   @media only screen and (max-width: 375px) {

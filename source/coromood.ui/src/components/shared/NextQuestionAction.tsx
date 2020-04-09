@@ -18,6 +18,7 @@ const NextButton = styled.button`
   border-radius: 25px;
   width: 100px;
   padding: 5px;
+  cursor: pointer;
   color: #b8b8b8;
 `;
 
@@ -26,11 +27,17 @@ const NextText = styled.p`
   margin: 0;
 `;
 
-export const NextQuestionAction = () => {
+type NextQuestionActionPropType = {
+  nextClicked: () => void;
+};
+
+export const NextQuestionAction = (props: NextQuestionActionPropType) => {
+  const buttonClick = () => props.nextClicked();
+
   return (
     <NextQuestionWrapper>
       <NextText>Sehr gut!</NextText>
-      <NextButton>
+      <NextButton onClick={buttonClick}>
         Weiter <Icon name="long arrow alternate right" size="mini" />
       </NextButton>
     </NextQuestionWrapper>

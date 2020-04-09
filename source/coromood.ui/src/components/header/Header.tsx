@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div`
   padding-top: 20px;
 
   > img {
-    height: 40px;
+    height: 45px;
   }
 
   > p {
@@ -23,7 +23,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const InfoActionWrapper = styled.div`
-  width: 350px;
+  width: 360px;
   height: 50px;
   display: flex;
   flex-wrap: wrap;

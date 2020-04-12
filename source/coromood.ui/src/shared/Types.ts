@@ -9,3 +9,11 @@ export enum Mood {
     Motiviert,
     Super,
 }
+
+export enum Activity {
+    OutOfOrder,
+    CouchPotato,
+    Ausgeglichen,
+    Produktiv,
+    SuperAktiv
+}

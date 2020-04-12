@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Activity } from "../../../shared/Types";
 import styled from "styled-components";
 import activity from "../../../images/activity/activity.svg";
@@ -6,6 +6,7 @@ import baer from "../../../images/activity/baer.svg";
 import blume from "../../../images/activity/blume.svg";
 import couch from "../../../images/activity/couch.svg";
 import fist from "../../../images/activity/fist.svg";
+import { NextQuestionAction } from "../../shared/NextQuestionAction";
 
 const ActivityBarWrapper = styled.div`
   display: flex;
@@ -94,6 +95,11 @@ type ActivityBarPropTypes = {
 };
 
 export const ActivityBar = (props: ActivityBarPropTypes) => {
+  const [userActivity, setUserActivity] = useState<Activity>(0);
+
+  const handleSliderChange = (e: any) => setUserActivity(e.target.value);
+  const handleSubmit = () => props.activitySelected(userActivity);
+
   return (
     <ActivityBarWrapper>
       <Title>Wie aktiv fühlst du dich diese Woche?</Title>
@@ -124,9 +130,18 @@ export const ActivityBar = (props: ActivityBarPropTypes) => {
           </IconWrapper>
         </IconBarWrapper>
         <SliderInputWrapper>
-          <input className="slider" type="range" min="0" max="4" step="1" />
+          <input
+            className="slider"
+            type="range"
+            defaultValue="0"
+            min="0"
+            max="4"
+            step="1"
+            onChange={(e: any) => handleSliderChange(e)}
+          />
         </SliderInputWrapper>
       </SliderWrapper>
+      <NextQuestionAction nextClicked={handleSubmit} />
     </ActivityBarWrapper>
   );
 };

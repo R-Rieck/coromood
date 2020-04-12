@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { MoodEmojiBar } from "./MoodEmojiBar";
 import { ActivityBar } from "./ActivityBar";
@@ -7,6 +7,8 @@ import { Mood, Activity } from "../../../shared/Types";
 const UInput = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 
 type SectionVisbility = {
@@ -23,8 +25,8 @@ export const Index = () => {
   const [activityBarVisibility, setActivityBarVisibility] = useState<
     SectionVisbility
   >({
-    MoodEmojiBar: false,
-    activityBar: true,
+    MoodEmojiBar: true,
+    activityBar: false,
   });
 
   const [UserEmotion, setUserEmotion] = useState<EmotionState>({
@@ -48,6 +50,8 @@ export const Index = () => {
       activityBar: false,
     });
   };
+
+  useEffect(() => console.log(UserEmotion), [UserEmotion]);
 
   if (activityBarVisibility.MoodEmojiBar)
     return (

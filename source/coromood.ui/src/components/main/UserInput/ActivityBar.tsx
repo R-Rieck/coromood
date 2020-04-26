@@ -33,7 +33,7 @@ const SliderWrapper = styled.div`
     -webkit-appearance: none;
     width: 90%;
     height: 5px;
-    background: #f1f1f1;
+    background: #a1a3fd;
     outline: none;
     opacity: 0.7;
     -webkit-transition: 0.2s;
@@ -84,6 +84,7 @@ const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   > img {
     height: 50px;
     filter: grayscale(100%);

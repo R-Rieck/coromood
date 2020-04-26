@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { MoodEmojiBar } from "./MoodEmojiBar";
 import { ActivityBar } from "./ActivityBar";
-import { Mood, Activity } from "../../../shared/Types";
+import { Mood, Activity, Tag } from "../../../shared/Types";
+import { TagBar } from "./TagBar";
 
 const UInput = styled.div`
   display: flex;
@@ -12,33 +13,37 @@ const UInput = styled.div`
 `;
 
 type SectionVisbility = {
-  MoodEmojiBar: boolean;
+  moodEmojiBar: boolean;
   activityBar: boolean;
+  tagBar: boolean;
 };
 
 type EmotionState = {
   mood: Mood | null;
   activity: Activity | null;
+  tags: Tag[] | null;
 };
 
 export const Index = () => {
   const [activityBarVisibility, setActivityBarVisibility] = useState<
     SectionVisbility
   >({
-    MoodEmojiBar: true,
+    moodEmojiBar: false,
     activityBar: false,
+    tagBar: true,
   });
 
   const [UserEmotion, setUserEmotion] = useState<EmotionState>({
     mood: null,
     activity: null,
+    tags: null,
   });
 
   const handleMoodSelected = (mood: Mood) => {
     setUserEmotion({ ...UserEmotion, mood: mood });
     setActivityBarVisibility({
       ...activityBarVisibility,
-      MoodEmojiBar: false,
+      moodEmojiBar: false,
       activityBar: true,
     });
   };
@@ -48,18 +53,28 @@ export const Index = () => {
     setActivityBarVisibility({
       ...activityBarVisibility,
       activityBar: false,
+      tagBar: true,
+    });
+  };
+
+  const handleTagSelected = (tags: Tag[]) => {
+    setUserEmotion({ ...UserEmotion, tags: tags });
+    setActivityBarVisibility({
+      ...activityBarVisibility,
+      tagBar: false,
     });
   };
 
   useEffect(() => console.log(UserEmotion), [UserEmotion]);
 
-  if (activityBarVisibility.MoodEmojiBar)
+  if (activityBarVisibility.moodEmojiBar)
     return (
       <UInput>
         <MoodEmojiBar moodSelected={(mood: Mood) => handleMoodSelected(mood)} />
       </UInput>
     );
-  else if (activityBarVisibility.activityBar)
+
+  if (activityBarVisibility.activityBar)
     return (
       <UInput>
         <ActivityBar
@@ -67,6 +82,13 @@ export const Index = () => {
             handleActivitySelected(activity)
           }
         />
+      </UInput>
+    );
+
+  if (activityBarVisibility.tagBar)
+    return (
+      <UInput>
+        <TagBar tagsSelected={(tags: Tag[]) => handleTagSelected(tags)} />
       </UInput>
     );
   else

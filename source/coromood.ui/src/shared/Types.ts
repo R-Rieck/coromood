@@ -17,3 +17,7 @@ export enum Activity {
     Produktiv,
     SuperAktiv
 }
+
+export type Tag = {
+    tag: string
+}

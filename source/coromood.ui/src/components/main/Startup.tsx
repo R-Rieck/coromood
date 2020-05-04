@@ -28,7 +28,7 @@ const StartupWrapper = styled.div`
 
 const Title = styled.h1`
   color: black;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 3rem;
   margin: 5px;
 `;
